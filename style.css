@@ -30,6 +30,12 @@ div.col-content {
   width: 50%;
 }
 
+/* Site Title */
+
+h2#site-title {
+  white-space: nowrap;
+}
+
 /* Navigation */
 
 nav {
