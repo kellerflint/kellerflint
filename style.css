@@ -1,0 +1,96 @@
+/* Resets */
+
+body {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Grid layout */
+
+div.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+div[class^="col-"] {
+  float: left;
+}
+
+div.col-section {
+  width: 50%;
+  background-color: grey;
+  color: hsl(0, 0%, 95%);
+  height: 100%;
+}
+
+div.col-content {
+  width: 50%;
+}
+
+/* Navigation */
+
+nav {
+  text-align: center;
+  background-color: hsl(0, 0%, 20%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav ul li {
+  float: left;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+nav ul li a {
+  font-family: sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: green;
+  text-decoration: none;
+}
+
+/* Section */
+
+div.col-section {
+  text-align: center;
+}
+
+/* Text Layout*/
+
+p {
+  font-family: sans-serif;
+}
+
+p.content-text {
+  padding-right: 15%;
+  padding-left: 15%;
+}
+
+h2.content-heading {
+  padding-right: 15%;
+  padding-left: 15%;
+}
+
+h1 {
+  font-family: sans-serif;
+}
+
+h2 {
+  font-family: sans-serif;
+}
+
+/* Footer */
+
+/*Why is it all red when I set background? How do I fix it?*/
+div#footer {
+  background-color: red;
+}
