@@ -9,13 +9,13 @@ body {
 
 /* Grid layout */
 
-div.row::after {
+div[class^="row"]::after {
   clear: both;
   content: "";
-  display: block;
+  display: table;
 }
 
-div.col {
+div[class^="col"] {
   float: left;
 }
 
@@ -49,13 +49,21 @@ nav ul li a {
 
 /* Main */
 
-div#main {
+div#about {
+  background-color: grey;
+}
+
+div#links {
+  background-color: grey;
+}
+
+div#work {
   background-color: grey;
 }
 
 /* Section */
 
-div#section {
+div.col-section {
   text-align: center;
   width: 50%;
   background-color: grey;
@@ -65,7 +73,7 @@ div#section {
 
 /* Content */
 
-div#content {
+div.col-content {
   width: 50%;
   background-color: white;
 }
@@ -89,14 +97,44 @@ h2.content-heading {
 
 h1 {
   font-family: sans-serif;
+  font-size: 4em;
 }
 
 h2 {
   font-family: sans-serif;
 }
 
+/* Resume Styling */
+
+div.work-item {
+  padding-left: 5%;
+  padding-right: 10%;
+}
+
+ul.work-description {
+  clear: both;
+  font-family: sans-serif;
+}
+
+p.content-location {
+  float: left;
+}
+
+p.content-dates {
+  float: right;
+}
+
+/* Links */
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
 /* Footer */
 
-div#footer {
-  background-color: red;
+div.row-footer {
+  background-color: hsl(0, 0%, 20%);
+  border: 1px solid grey;
+  color: green;
 }
