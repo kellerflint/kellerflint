@@ -61,6 +61,18 @@ div#work {
   background-color: grey;
 }
 
+div#volunteer {
+  background-color: white;
+}
+
+div#section-volunteer {
+  background-color: white;
+}
+
+div#content-volunteer {
+  background-color: grey;
+}
+
 /* Section */
 
 div.col-section {
@@ -69,6 +81,14 @@ div.col-section {
   background-color: grey;
   color: hsl(0, 0%, 95%);
   height: 100%;
+}
+
+div#section-volunteer {
+  color: black;
+}
+
+div#content-volunteer {
+  color: hsl(0, 0%, 95%);
 }
 
 /* Content */
@@ -114,6 +134,7 @@ div.work-item {
 ul.work-description {
   clear: both;
   font-family: sans-serif;
+  font-style: italic;
 }
 
 p.content-location {
@@ -135,6 +156,6 @@ a {
 
 div.row-footer {
   background-color: hsl(0, 0%, 20%);
-  border: 1px solid grey;
+  border: 1px solid hsl(0, 0%, 20%);
   color: green;
 }
