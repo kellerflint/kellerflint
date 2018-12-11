@@ -105,3 +105,10 @@ nav ul li a.current {
 #volunteer {
     border-bottom: 1px solid grey;
 }
+
+/* Article */
+
+.article {
+    padding-bottom: 40px;
+    border-bottom: 1px solid grey;
+}
