@@ -9,7 +9,7 @@ $.getJSON("posts/posts.json", function (data) {
             let title = $("<h2></h2>");
             title.text(this.getAttribute("data-title"));
             console.log(title);
-            this.prepend(title);
+            this.prepend(title.get(0));
         });
         $(".content-div").append(article);
     });
