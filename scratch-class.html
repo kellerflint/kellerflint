@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gamemaker Junior Ranks</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            padding-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .list {
+            margin-left: 45%;
+        }
+
+        #novice {
+            color: rgb(205, 127, 50);
+        }
+
+        #apprentice {
+            color: silver;
+        }
+
+        #adept {
+            color: gold;
+        }
+
+        #expert {
+            color: mediumturquoise;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p"></p>
+    <h1>Ranks</h1>
+    <h2>Unranked</h2>
+    <h2 id="novice">Novice</h2>
+    <h2 id="apprentice">Apprentice</h2>
+    <h2 id="adept">Adept</h2>
+    <h2 id="expert">Expert</h2>
+    <h2 id="master">Master</h2>
+
+    <p><a href="https://docs.google.com/document/d/1Fd5uULX1SwBwRwNlfUWmfKpUmA6apqBy54QD7qwYOQ8/edit?usp=sharing">see
+            badges</a></p>
+
+    <script>
+
+        const VARIANCE = 0.02;
+
+        let body = document.getElementById("master");
+        let message = document.getElementById("p");
+
+        // [color value, isIncreasing?]
+        let colors = [[0, true], [0, true], [0, true]];
+
+        // increases value of the given color
+        function increaseColor(colorId) {
+            if (colors[colorId][1]) {
+                colors[colorId][0]++;
+            } else {
+                colors[colorId][0]--;
+            }
+        }
+
+        // Randomly reverses the given color's direction
+        function randomize(colorId) {
+            if (Math.random() < VARIANCE) {
+                if (colors[colorId][1])
+                    colors[colorId][1] = false;
+                else
+                    colors[colorId][1] = true;
+            }
+        }
+
+        // if the given color is out of bounds, reverses direction to keep it in bounds
+        function checkOutOfBounds(colorId) {
+            if (colors[colorId][0] >= 255) {
+                colors[colorId][1] = false;
+            } else if (colors[colorId][0] <= 1) {
+                colors[colorId][1] = true;
+            }
+        }
+
+        // interval changes color every 20 ms
+        setInterval(function () {
+
+            // randomizes index between 0 and 2 inclusive
+            randomize(Math.floor(Math.random() * colors.length));
+
+            for (let i in colors) {
+                increaseColor(i);
+                checkOutOfBounds(i);
+            }
+
+            let bg_color = "rgb(" +
+                colors[0][0] + "," +
+                colors[1][0] + "," +
+                colors[2][0] + ")";
+
+            // +128 %256 to prevent blending in with the background.
+            let color = "rgb(" +
+                (colors[0][0] + 128) % 256 + "," +
+                (colors[1][0] + 128) % 256 + "," +
+                (colors[2][0] + 128) % 256 + ")";
+
+            console.log(bg_color);
+
+            message.style.color = color;
+            body.style.color = bg_color;
+
+        }, 20);
+
+    </script>
+
+</body>
+
+</html>
