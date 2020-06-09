@@ -90,6 +90,10 @@ nav ul li a.current {
     padding-left: 5px;
 }
 
+.work-center {
+    text-align: center;
+}
+
 .work-title {
     text-align: left;
 }
@@ -111,4 +115,12 @@ nav ul li a.current {
 .article {
     padding-bottom: 40px;
     border-bottom: 1px solid grey;
+}
+
+.img-work {
+    width: 800px;
+}
+
+.text-small {
+    font-size: small;
 }
